@@ -159,12 +159,10 @@ def get_bnw_chunks():
     return get_chunks("brave_new_world.txt")
 
 def get_aiw_chunks():
-    #book = nltk.corpus.gutenberg.raw('carroll-alice.txt')
-    book = ""
-    return get_chunks_fileless(book)
+    return get_chunks("carroll-alice.txt")
 
 if __name__ == "__main__":
-    book_holder = [get_dadoes_chunks(), get_bnw_chunks()]
+    book_holder = [get_dadoes_chunks(), get_bnw_chunks(), get_aiw_chunks()]
     print("\n")
     #print("I am extremely proud of myself for this amazing work")
     print("I managed to write a short program using a reasonably small amount of data")
