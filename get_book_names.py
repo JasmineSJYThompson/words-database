@@ -57,10 +57,7 @@ def get_bnw_full_names():
     return get_full_names(bnw_chunks, word_pairs, shorter_word_list, shorter_name_list)
 
 def get_aiw_full_names():
-    import nltk
-    book = nltk.corpus.gutenberg.raw('carroll-alice.txt')
-
-    aiw_chunks = get_book_chunks.get_chunks_fileless(book)
+    aiw_chunks = get_book_chunks.get_chunks("carroll-alice.txt")
     word_pairs = get_word_lists.get_word_pair_list()
     word_list = get_word_lists.get_word_list()
     name_list = get_word_lists.get_name_list()
