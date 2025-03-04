@@ -76,4 +76,5 @@ def get_aiw_full_names():
 if __name__ == "__main__":
     print(get_dadoes_full_names())
     print(get_bnw_full_names())
-    print(get_aiw_full_names())
+    # commented out line as not working well for alice in wonderland in this case
+    #print(get_aiw_full_names())
