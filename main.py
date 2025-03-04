@@ -139,10 +139,9 @@ if __name__ == "__main__":
     print("Double chunks shadow smallest chunks:",
           get_actual_names(chunks, smallest_chunks_ordered_cut_off, from_combos))
 
-    """
+    
     chunks, smallest_chunks_ordered_cut_off, from_combos = get_book_chunks.get_aiw_chunks()
     try:
         print(get_actual_names(chunks, smallest_chunks_ordered_cut_off, from_combos))
     except:
         print("Some issue with the book")
-    """
