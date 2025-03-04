@@ -174,5 +174,4 @@ def get_all_actual_names():
         print("Some issue with the book")
 
 if __name__ == "__main__":
-    get_all_full_names_archived()
     get_all_actual_names()
