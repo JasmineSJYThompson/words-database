@@ -30,3 +30,13 @@ def get_dadoes_text():
         text = readfile.read()
     return text
 
+def get_bnw_text():
+    with open("brave_new_world.txt", "r", encoding="utf-8") as readfile:
+        text = readfile.read()
+    return text
+
+def get_aiw_text():
+    with open("carroll-alice.txt", "r", encoding="utf-8") as readfile:
+        text = readfile.read()
+    return text
+
