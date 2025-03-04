@@ -87,7 +87,7 @@ def chunks_remove_redundant_threes(chunks):
         new_chunks[-3] = [three for three in threes if three not in removed_threes]
     return new_chunks
 
-def get_chunks(book_file):
+def get_chunks(book_file, smallest_chunks_cut_off=30):
     with open(book_file, "r") as readfile:
         text = readfile.read()
 
@@ -106,11 +106,10 @@ def get_chunks(book_file):
     print("Triple chunks:", triple_chunks_ordered)
 
     smallest_chunks_ordered, smallest_chunks_ordered_count = useful_functions.list_counter_rearrange(chunks[-1])
-    cut_off = 30
     smallest_chunks_ordered_cut_off = useful_functions.cut_off_list_before_cut_off(
-        smallest_chunks_ordered, smallest_chunks_ordered_count, cut_off)
+        smallest_chunks_ordered, smallest_chunks_ordered_count, smallest_chunks_cut_off)
     # print(smallest_chunks_ordered, smallest_chunks_ordered_count)
-    print(f"Smallest chunks ordered cut off {cut_off}:",
+    print(f"Smallest chunks ordered cut off {smallest_chunks_cut_off}:",
           smallest_chunks_ordered_cut_off,
           smallest_chunks_ordered_count[:len(smallest_chunks_ordered_cut_off)])
 
