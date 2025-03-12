@@ -101,7 +101,7 @@ def get_main_character_first_name():
 def get_actual_names(chunks, smallest_chunks_ordered_cut_off, from_combos):
     first_names_dict, last_names_dict = get_first_last_names_dicts(chunks[-2])
     main_character_first_name = smallest_chunks_ordered_cut_off[0]
-    print("Main character first name:", main_character_first_name)
+    print("Main character first name guess 1:", main_character_first_name)
 
     actual_names = []
     for potential_first_or_last_name in smallest_chunks_ordered_cut_off:
@@ -142,7 +142,7 @@ def get_all_full_names_archived():
     name_list = get_word_lists.get_name_list()
     shorter_word_list = word_list[0:2000]
     shorter_name_list = name_list[0:100]
-    main_books = ["do_androids_dream_of_electric_sheep.txt", "brave_new_world.txt", "carroll-alice.txt"]
+    main_books = ["do_androids_dream_of_electric_sheep.txt", "brave_new_world.txt", "a-clockwork-orange.txt", "carroll-alice.txt"]
     for book in main_books:
         chunks = get_book_chunks.get_chunks(book)
 
@@ -165,6 +165,12 @@ def get_all_actual_names():
     chunks, smallest_chunks_ordered_cut_off, from_combos = get_book_chunks.get_bnw_chunks()
     print("Double chunks shadow smallest chunks:",
           get_actual_names(chunks, smallest_chunks_ordered_cut_off, from_combos))
+    
+    chunks, smallest_chunks_ordered_cut_off, from_combos = get_book_chunks.get_aco_chunks()
+    try:
+        print(get_actual_names(chunks, smallest_chunks_ordered_cut_off, from_combos))
+    except:
+        print("Some issue with the book")
 
     
     chunks, smallest_chunks_ordered_cut_off, from_combos = get_book_chunks.get_aiw_chunks()

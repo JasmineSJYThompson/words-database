@@ -58,7 +58,7 @@ def chunks_filler_word_cleaner(chunks):
                     "No", "Yes", "Over", "Under",
                     "An", "At", "Be", "By", "All", "If", "This", "Why",
                     "Her", "His", "He", "She", "They", "It", "On", "In", "We", "You",
-                    "Maybe", "Not", "What"]
+                    "Maybe", "Not", "What", "Then"]
     cleaned_chunks = []
     for chunk in chunks:
         cleaned_chunk = []
@@ -136,7 +136,7 @@ def get_chunks_fileless(text):
     print("Triple chunks:", triple_chunks_ordered)
 
     smallest_chunks_ordered, smallest_chunks_ordered_count = useful_functions.list_counter_rearrange(chunks[-1])
-    cut_off = 30
+    cut_off = 10
     smallest_chunks_ordered_cut_off = useful_functions.cut_off_list_before_cut_off(
         smallest_chunks_ordered, smallest_chunks_ordered_count, cut_off)
     # print(smallest_chunks_ordered, smallest_chunks_ordered_count)
@@ -157,11 +157,14 @@ def get_dadoes_chunks():
 def get_bnw_chunks():
     return get_chunks("brave_new_world.txt")
 
+def get_aco_chunks():
+    return get_chunks("a-clockwork-orange.txt")
+
 def get_aiw_chunks():
     return get_chunks("carroll-alice.txt")
 
 if __name__ == "__main__":
-    book_holder = [get_dadoes_chunks(), get_bnw_chunks(), get_aiw_chunks()]
+    book_holder = [get_dadoes_chunks(), get_bnw_chunks(), get_aiw_chunks(), get_aco_chunks()]
     print("\n")
     #print("I am extremely proud of myself for this amazing work")
     print("I managed to write a short program using a reasonably small amount of data")

@@ -202,6 +202,7 @@ if __name__ == "__main__":
     removable_actual_names = []
     for actual_name in actual_names:
         for three in chunks[-3]:
+            print()
             if re.search(actual_name, three):
                 removable_actual_names.append(actual_name)
     print("Removable actual names:", removable_actual_names)

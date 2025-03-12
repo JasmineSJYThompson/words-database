@@ -40,7 +40,8 @@ def extract_important_information(book_file):
 
     print("Other")
     print(f"Starting speech section: {speech_sections[0]}")
-    print(f"Ending speech section: {speech_sections[-1]}")
+    # Removed ending speech section as not sure if it matches up well all the time
+    #print(f"Ending speech section: {speech_sections[-1]}")
 
 if __name__ == "__main__":
     extract_important_information("dadoes.txt")
@@ -52,3 +53,7 @@ if __name__ == "__main__":
     print("-" * 100)
 
     extract_important_information("brave_new_world.txt")
+
+    print("-" * 100)
+
+    extract_important_information("a-clockwork-orange.txt")
